@@ -1,2 +1,2 @@
-default['weekly'] = 'daily'
-default['backup'] = '10'
+default['logrotate']['freq'] = 'daily'
+default['logrotate']['preserve'] = '10'

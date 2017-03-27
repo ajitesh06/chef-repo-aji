@@ -1,8 +1,9 @@
 # see "man logrotate" for details
 # rotate log files weekly
-<%= node['weekly'] %>
+<%= node['logrotate']['freq'] %>
+
 # keep 4 weeks worth of backlogs
-rotate <%= node['backup'] %>
+rotate <%= node['logrotate']['preserve'] %>
 
 # create new (empty) log files after rotating old ones
 create

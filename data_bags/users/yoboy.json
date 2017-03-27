@@ -1,0 +1,10 @@
+{
+	"id":"yoboy",
+	"comment":"this is a new admin user ",
+	"uid":"2005",
+	"gid":0,
+	"home":"/home/yoboy",
+	"shell":"/bin/bash",
+	"password":"aju1234aju"
+
+}

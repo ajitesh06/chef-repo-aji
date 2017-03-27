@@ -1,5 +1,5 @@
 package 'ntp'
 
 service 'ntpd' do
-  action[:start]
+  action [:start]
 end
