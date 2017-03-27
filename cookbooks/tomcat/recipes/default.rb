@@ -20,7 +20,7 @@ execute 'unzip' do
   cwd '/home/user/'
   action :run
   command 'unzip tomcat.zip'
-  not_if { ::File.directory?('/home/user/apache*') }
+  not_if { ::File.directory?('/home/user/tomcat/bin') }
 end
 
 execute 'move' do
@@ -28,9 +28,23 @@ execute 'move' do
   cwd '/home/user/'
   action :run
   command 'mv apache* tomcat'
-  not_if { ::File.directory?('/home/user/tomcat/') }
+  not_if { ::File.directory?('/home/user/tomcat/bin') }
 end
 
-package 'java' do
-  action :install
+#package 'java' do
+#  action :install
+#end
+
+execute 'permission' do
+  user 'root'
+  cwd '/home/user/tomcat'
+  action :run
+  command 'chmod 777 bin/*.sh'
+end
+
+execute 'startup' do
+  user 'root'
+  cwd '/home/user/tomcat/bin/'
+  action :run
+  command './startup.sh'
 end
